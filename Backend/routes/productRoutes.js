@@ -90,7 +90,6 @@ router.put("/:id", validateProductInput, async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
 
-  // Validate that id is a positive integer
   if (isNaN(id) || id <= 0) {
     return res.status(400).json({ error: "Invalid product ID" });
   }

@@ -3,7 +3,6 @@ const pool = require("./db_config/db.js");
 
 dotenv.config();
 
-// Async function to insert product data
 async function insertProduct(name, description, price, quantity) {
   const query = `
         INSERT INTO products (name, description, price, quantity)
@@ -19,7 +18,6 @@ async function insertProduct(name, description, price, quantity) {
   }
 }
 
-// Example usage: Inserting multiple products
 (async () => {
   const products = [
     {
@@ -159,6 +157,5 @@ async function insertProduct(name, description, price, quantity) {
     );
   }
 
-  // Close the pool after all inserts
   await pool.end();
 })();

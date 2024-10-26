@@ -4,7 +4,6 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// Create a connection pool
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
