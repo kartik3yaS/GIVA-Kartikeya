@@ -21,11 +21,13 @@ const validateProductInput = [
 // GET: Fetch all products
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM products");
+    const result = await pool.query("SELECT * FROM productmanagement");
     res.status(200).json(result.rows);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error("Error fetching products:", err); // Log detailed error
+    res
+      .status(500)
+      .json({ error: "Internal Server Error", details: err.message });
   }
 });
 
@@ -38,7 +40,7 @@ router.post("/", validateProductInput, async (req, res) => {
 
   const { name, description, price, quantity } = req.body;
   const query = `
-    INSERT INTO products (name, description, price, quantity)
+    INSERT INTO productmanagement (name, description, price, quantity)
     VALUES ($1, $2, $3, $4) RETURNING *`;
 
   try {
@@ -65,7 +67,7 @@ router.put("/:id", validateProductInput, async (req, res) => {
 
   const { name, description, price, quantity } = req.body;
   const query = `
-    UPDATE products SET name = $1, description = $2, price = $3, quantity = $4
+    UPDATE productmanagement SET name = $1, description = $2, price = $3, quantity = $4
     WHERE id = $5 RETURNING *`;
 
   try {
@@ -94,7 +96,7 @@ router.delete("/:id", async (req, res) => {
     return res.status(400).json({ error: "Invalid product ID" });
   }
 
-  const query = "DELETE FROM products WHERE id = $1 RETURNING *";
+  const query = "DELETE FROM productmanagement WHERE id = $1 RETURNING *";
 
   try {
     const result = await pool.query(query, [id]);

@@ -5,7 +5,7 @@ dotenv.config();
 
 async function insertProduct(name, description, price, quantity) {
   const query = `
-        INSERT INTO products (name, description, price, quantity)
+        INSERT INTO productmanagement (name, description, price, quantity)
         VALUES ($1, $2, $3, $4)`;
 
   const values = [name, description, price, quantity];
@@ -19,7 +19,7 @@ async function insertProduct(name, description, price, quantity) {
 }
 
 (async () => {
-  const products = [
+  const productmanagement = [
     {
       name: "Gold Necklace",
       description: "Elegant gold necklace.",
@@ -148,7 +148,7 @@ async function insertProduct(name, description, price, quantity) {
     },
   ];
 
-  for (const product of products) {
+  for (const product of productmanagement) {
     await insertProduct(
       product.name,
       product.description,
