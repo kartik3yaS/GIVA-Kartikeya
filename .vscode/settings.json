@@ -1,0 +1,84 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "productmanagement.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "kartikeya",
+      "database": "productmanagement",
+      "username": "postgres"
+    },
+    {
+      "previewLimit": 50,
+      "server": "intern.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "intern",
+      "database": "intern",
+      "username": "postgres"
+    },
+    {
+      "previewLimit": 50,
+      "server": "database-2024.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "intern",
+      "database": "metadata",
+      "username": "kartikeya"
+    },
+    {
+      "previewLimit": 50,
+      "server": "pg-giva-intern1012.c.aivencloud.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "intern2024",
+      "database": "defaultdb",
+      "username": "avnadmin"
+    },
+    {
+      "previewLimit": 50,
+      "server": "pg-giva-intern1012.c.aivencloud.com",
+      "port": 23459,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "jai shree ram",
+      "database": "defaultdb",
+      "username": "avnadmin"
+    },
+    {
+      "previewLimit": 50,
+      "server": "database-2024.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "jai ho",
+      "database": "metadata",
+      "username": "kartikeya"
+    },
+    {
+      "previewLimit": 50,
+      "server": "database-2024.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "dead",
+      "username": "kartikeya",
+      "database": "metadata"
+    },
+    {
+      "previewLimit": 50,
+      "server": "database-2024.cryqyqc8swgj.eu-north-1.rds.amazonaws.com",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "xyz",
+      "database": "metadata",
+      "username": "kartikeya"
+    }
+  ]
+}
