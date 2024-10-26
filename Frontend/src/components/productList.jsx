@@ -13,7 +13,9 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/products");
+        const response = await axios.get(
+          "https://giva-kartikeya.onrender.com/api/products"
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -25,7 +27,9 @@ const ProductList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/products/${id}`);
+      await axios.delete(
+        `https://giva-kartikeya.onrender.com/api/products/${id}`
+      );
       setProducts(products.filter((product) => product.id !== id));
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -40,7 +44,7 @@ const ProductList = () => {
   const handleSaveChanges = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/products/${selectedProduct.id}`,
+        `https://giva-kartikeya.onrender.com/api/products/${selectedProduct.id}`,
         selectedProduct
       );
       setProducts(

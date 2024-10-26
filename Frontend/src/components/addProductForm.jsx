@@ -26,7 +26,7 @@ const AddProductForm = ({ onProductAdded }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/products",
+        "https://giva-kartikeya.onrender.com/api/products",
         product,
         {
           headers: {
