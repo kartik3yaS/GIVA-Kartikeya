@@ -1,5 +1,7 @@
 # GIVA Kartikeya
 
+## Deployed link: https://giva-kartikeya.vercel.app/
+
 ## Features
 
 - User-friendly interface for product management.
