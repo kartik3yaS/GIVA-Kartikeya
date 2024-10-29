@@ -23,7 +23,28 @@ const ProductList = () => {
     };
 
     fetchProducts();
+
+    const cachedProducts = localStorage.getItem("products");
+    if (cachedProducts) {
+      setProducts(JSON.parse(cachedProducts));
+    }
+
+    const keepAliveInterval = setInterval(() => {
+      axios
+        .get("https://giva-kartikeya.onrender.com/api/keepalive")
+        .catch((err) => {
+          console.error("Keep-alive failed:", err);
+        });
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(keepAliveInterval);
   }, []);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      localStorage.setItem("products", JSON.stringify(products));
+    }
+  }, [products]);
 
   const handleDelete = async (id) => {
     try {
